@@ -2,9 +2,15 @@ TEMPORARY LICENSE NOTICE
 
 This repository contains code used for a research paper. The final licensing terms have not yet been determined.
 
+### Third-Party Code and Licenses
+This project includes code from:
+- GazeTracking by Antoine Lamé – Licensed under MIT (https://github.com/antoinelame/GazeTracking.git)
+
+All third-party code is subject to its original license terms. 
+
 Until a final license is specified:
-- This code is available for academic review only.
-- Any distribution, modification, or reuse beyond academic purposes is restricted.
+- This code is available **for academic review only**.
+- Any distribution, modification, or reuse **beyond academic purposes is restricted**.
 - Once a final license is chosen, it will replace this notice.
 
 For inquiries, contact narsipurpranav@gmail.com.
