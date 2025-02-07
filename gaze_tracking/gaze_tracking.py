@@ -85,6 +85,25 @@ class GazeTracking(object):
             pupil_left = self.eye_left.pupil.x / (self.eye_left.center[0] * 2 - 10)
             pupil_right = self.eye_right.pupil.x / (self.eye_right.center[0] * 2 - 10)
             return (pupil_left + pupil_right) / 2
+        
+    def horizontal_pupil_left_ratio(self):
+        """Returns a number between 0.0 and 1.0 that indicates the
+        horizontal direction of the gaze of the left pupil. The extreme right is 0.0,
+        the center is 0.5 and the extreme left is 1.0"""
+        if self.pupils_located:
+             pupil_left = self.eye_left.pupil.x / (self.eye_left.center[0] * 2 - 10)
+             if pupil_left is not None:
+                 return pupil_left
+    
+    def horizontal_pupil_right_ratio(self):
+        """Returns a number between 0.0 and 1.0 that indicates the
+        horizontal direction of the gaze of the right pupil. The extreme right is 0.0,
+        the center is 0.5 and the extreme left is 1.0
+        """
+        if self.pupils_located:
+             pupil_right = self.eye_right.pupil.x / (self.eye_right.center[0] * 2 - 10)
+             if pupil_right is not None:
+                 return pupil_right
 
     def vertical_ratio(self):
         """Returns a number between 0.0 and 1.0 that indicates the
@@ -114,8 +133,10 @@ class GazeTracking(object):
     def is_blinking(self):
         """Returns true if the user closes his eyes"""
         if self.pupils_located:
-            blinking_ratio = (self.eye_left.blinking + self.eye_right.blinking) / 2
-            return blinking_ratio > 3.8
+            #blinking_ratio = (self.eye_left.blinking + self.eye_right.blinking) / 2
+            blinking_ratio = (self.eye_left.blinking + self.eye_right.blinking)
+            #return blinking_ratio > 3.8
+            return blinking_ratio
 
     def annotated_frame(self):
         """Returns the main frame with pupils highlighted"""
